@@ -36,19 +36,6 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text])
 
-  const keyupbutton = () => {
-    console.log('escribiendo..');
-    
-  }
-
-  // useEffect(() => {
-    
-  //   inputFrom.current.addEventListener('keyup',keyupbutton)
-  
-  //   return () => {
-  //     inputFrom.current.removeEventListener('keyup',keyupbutton )
-  //   }
-  // }, [])
   
   
 
@@ -74,7 +61,7 @@ function App() {
                     </div>
                     <Form >
                       <Select type='from' onChange={setfromLanguage} value={fromLanguage}  />
-                      <TextArea ref={inputFrom} loading={loading} onChange={setText} value={text} autoFocus={true} type='from' />
+                      <TextArea loading={loading} onChange={setText} value={text} autoFocus={true} type='from' />
                     </Form>
                     <Form>
                       <Select type='to' onChange={setToLanguage} value={toLanguage} />

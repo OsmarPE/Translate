@@ -9,7 +9,7 @@ interface Props {
     ref?: React.MutableRefObject<HTMLTextAreaElement>
 }
 
-function TextArea({ type, value, onChange, loading, autoFocus, ref }: Props) {
+function TextArea({ type, value, onChange, loading, autoFocus }: Props) {
 
     const getPlaceholder = (type: 'from' | 'to', loading: boolean) => {
         if (type === 'from') return 'Enter text'
@@ -19,7 +19,6 @@ function TextArea({ type, value, onChange, loading, autoFocus, ref }: Props) {
 
     return (
         <textarea
-            ref={ref ?? ''}
             placeholder={getPlaceholder(type, loading)}
             onChange={e => onChange(e.target.value)}
             value={value}

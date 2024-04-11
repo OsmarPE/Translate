@@ -36,6 +36,6 @@ export type actionsType = {type:'toLanguage',payload:typeToLanguage} |
 
 
 
-
+export type themeType = 'light' | 'dark' 
 
 

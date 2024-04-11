@@ -16,15 +16,12 @@ function App() {
  const {loading,fromLanguage,text,setfromLanguage, setToLanguage,result,setResult,setText,toLanguage, interChangeLanguage} = useTranslate()
 
 
- // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
- const inputFrom = useRef<HTMLTextAreaElement>(null!);
 
   useEffect(() => {
     if (text.length > 3) {
         getTranstale(text)
         .then(data => {
           setResult(data.message)
-          console.log(result);
           
         })
     }
@@ -46,19 +43,19 @@ function App() {
             
             <div className='body p-6'>
                 
-                <section className="favorites flex items-center gap-5">
+                {/* <section className="favorites flex items-center gap-5">
                     <span className='font-semibold'>Your favorites:</span>
                     <div className='flex items-center gap-3'>
                         {
                           languagesFavorites.map( lang => <ButtonFav languages={lang} setToLanguage={setToLanguage} setfromLanguage={setfromLanguage} /> )
                         }
                     </div>
-                </section>
+                </section> */}
 
-                <section className='grid gap-4 grid-cols-2 mt-8 relative'>
-                    <div className='absolute size-14 rounded-full grid place-items-center dark:bg-dark left-1/2 -translate-x-1/2 top-[20%] '>
+                <section className='grid gap-4 grid-cols-2 relative'>
+                    {/* <div className='absolute size-14 rounded-full grid place-items-center dark:bg-dark left-1/2 -translate-x-1/2 top-[20%] '>
                       <ButtonInterchange disabled={fromLanguage ===  'auto'} onClick={() => interChangeLanguage()} />
-                    </div>
+                    </div> */}
                     <Form >
                       <Select type='from' onChange={setfromLanguage} value={fromLanguage}  />
                       <TextArea loading={loading} onChange={setText} value={text} autoFocus={true} type='from' />

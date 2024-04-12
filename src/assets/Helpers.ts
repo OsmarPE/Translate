@@ -19,4 +19,14 @@ export const languagesFavorites: FavType[] = [
         from: 'fr',
         to: 'en'
     },
-]   
+]
+
+interface sizeContentX{
+    anchoX:number,
+    altoX:number
+}
+interface sizeContentY{
+    anchoY:number,
+    altoY:number
+}
+

@@ -15,6 +15,8 @@ function Select({ onChange, type, value }: Props) {
         onChange(e.target.value as languagesType)
     }
 
+    
+
     return (
         <div className="flex items-center gap-4">
             <span className="text-sm text-dark/45 dark:text-white/45 capitalize">{type}:</span>

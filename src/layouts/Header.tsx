@@ -25,7 +25,7 @@ function Header() {
                         <Moon className="size-[60%]"/>
                 </button>
             </div>
-        </header>
+        </header> 
     )
 }
 

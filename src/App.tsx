@@ -50,6 +50,12 @@ function App() {
     }, 500);
   };
 
+  const handleSpeak = () =>{
+    const speak = new SpeechSynthesisUtterance(result)
+    speak.lang = 'en-US'
+    speechSynthesis.speak(speak);
+  }
+
   return (
     <Container>
       <div className="w-[90%] max-w-4xl dark:bg-dark text-dark  dark:text-white rounded-2xl border border-accent dark:border-white/10">
@@ -82,7 +88,15 @@ function App() {
                 value={result}
                 autoFocus={false}
                 type="to"
-              />
+              >
+                {
+                  result.length > 0 && (
+                    <button className="absolute bottom-0 left-0 " onClick={handleSpeak}>
+                      <i className="ri-volume-up-line text-xl"></i>
+                    </button>
+                  )
+                }
+              </TextArea>
             </Form>
           </section>
         </div>
